@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-console.log(process.env.MONGDB_URI)
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/wayfarer';
 
 mongoose
