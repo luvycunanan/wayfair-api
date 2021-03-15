@@ -8,20 +8,11 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
-  db.Post.findById(req.params.id).populate('comments').exec((err, post) => {
-    if (err) console.log(err)
-    res.json(post)
-  })
-}
-
-
-
-// const show = (req, res) => {
-//   db.Post.findById(req.params.id, (err, foundPost) => {
-//     if (err) return console.log(err);
-//     res.json(foundPost);
-//   });
-// };
+  db.Post.findById(req.params.id, (err, foundPost) => {
+    if (err) return console.log(err);
+    res.json(foundPost);
+  });
+};
 
 const create = (req, res) => {
   console.log(req.body)

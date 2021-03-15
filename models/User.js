@@ -18,7 +18,14 @@ const userSchema = new mongoose.Schema(
       unique: true,
       index: true,
     },
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post',
+      },
+    ],
   },
+  { timestamps: true }
 );
 
 const User = mongoose.model('User', userSchema);

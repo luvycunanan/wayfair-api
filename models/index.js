@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/wayfarer';
+const connectionString = 'mongodb://localhost:27017/wayfarer';
 
 mongoose
   .connect(connectionString, {
@@ -11,11 +11,9 @@ mongoose
   .then(() => console.log('MongoDB connected successfully'))
   .catch((err) => console.log(err));
 
-module.exports = {
-  City: require('./City'),
-  Post: require('./Post'),
-  User: require('./User'),
-  Comment: require('./Comment '),
-  secretOrKey: 'secret',
-}
+  module.exports = {
+      City: require('./City'),
+      Post: require('./Post'),
+      // User: require('./User'),
+  }
 
